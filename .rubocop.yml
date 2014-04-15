@@ -1,0 +1,9 @@
+AllCops:
+  Excludes:
+    - bin/**
+    - spec/dummy/bin/**
+    - spec/dummy/config/**
+    - spec/dummy/db/**
+
+StringLiterals:
+  EnforcedStyle: double_quotes
