@@ -1,3 +1,3 @@
 Run specs
 
-    rake spec
+    spring rake

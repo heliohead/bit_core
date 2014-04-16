@@ -8,6 +8,8 @@ module BitCore
              dependent: :destroy
 
     validates :title, :position, presence: true
-    validates :position, uniqueness: true
+    validates :position,
+              uniqueness: true,
+              numericality: { greater_than_or_equal_to: 0 }
   end
 end
