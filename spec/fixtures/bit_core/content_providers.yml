@@ -1,0 +1,9 @@
+home_landing_slideshow:
+  content_module: home_landing
+  position: 1
+  type: BitCore::ContentProviders::SlideshowProvider
+
+home_module_2_slideshow:
+  content_module: home_module_2
+  position: 1
+  type: BitCore::ContentProviders::SlideshowProvider

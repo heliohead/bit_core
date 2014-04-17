@@ -22,7 +22,7 @@ class CreateBitCoreContentProviders < ActiveRecord::Migration
           ALTER TABLE bit_core_content_providers
             ADD CONSTRAINT fk_content_providers_modules
             FOREIGN KEY (bit_core_content_module_id)
-            REFERENCES bit_core_modules(id)
+            REFERENCES bit_core_content_modules(id)
         SQL
       end
 
