@@ -11,5 +11,15 @@ module BitCore
     validates :position,
               uniqueness: true,
               numericality: { greater_than_or_equal_to: 0 }
+
+    def add_module(title)
+      content_modules.create(title: title, position: last_position + 1)
+    end
+
+    private
+
+    def last_position
+      content_modules.order(:position).last.try(:position) || 0
+    end
   end
 end
