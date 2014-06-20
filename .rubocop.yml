@@ -1,14 +1,14 @@
 AllCops:
   Exclude:
-    - bin/**
-    - db/**
-    - spec/dummy/bin/**
-    - spec/dummy/config/**
-    - spec/dummy/db/**
+    - bin/**/*
+    - db/**/*
+    - spec/dummy/bin/**/*
+    - spec/dummy/config/**/*
+    - spec/dummy/db/**/*
 
 Documentation:
   Exclude:
-    - spec/**
+    - spec/**/*
 
 StringLiterals:
   EnforcedStyle: double_quotes

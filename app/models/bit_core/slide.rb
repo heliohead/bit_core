@@ -12,15 +12,6 @@ module BitCore
     validates :position, numericality: { greater_than_or_equal_to: 1 }
     validates :position, uniqueness: { scope: :bit_core_slideshow_id }
 
-    def self.update_positions(ids)
-      transaction do
-        connection.execute "SET CONSTRAINTS bit_core_slide_position DEFERRED"
-        ids.each_with_index do |id, index|
-          where(id: id).update_all(position: index + 1)
-        end
-      end
-    end
-
     def render_body
       return "" if body.nil?
 

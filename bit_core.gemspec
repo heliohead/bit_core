@@ -1,4 +1,4 @@
-$:.push File.expand_path("../lib", __FILE__)
+$LOAD_PATH.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require "bit_core/version"
@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "pg"
   s.add_development_dependency "spring"
-  s.add_development_dependency "rspec-rails", "~> 3.0.0.beta"
+  s.add_development_dependency "rspec-rails", "~> 3.0.1"
 end
