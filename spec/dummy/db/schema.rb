@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417174159) do
+ActiveRecord::Schema.define(version: 20140620174146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140417174159) do
     t.boolean  "is_title_visible",      default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "options"
   end
 
   add_index "bit_core_slides", ["bit_core_slideshow_id", "position"], name: "bit_core_slide_position", unique: true, using: :btree
