@@ -9,7 +9,6 @@ module BitCore
              inverse_of: :slideshow
     has_one :content_provider,
             as: :source_content,
-            inverse_of: :source_content,
             dependent: :nullify
 
     validates :title, presence: true

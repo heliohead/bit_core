@@ -1,5 +1,6 @@
 .bundle/
 log/*.log
+spec/dummy/db/schema.rb
 spec/dummy/log/*.log
 pkg/
 .DS_Store
