@@ -29,14 +29,14 @@ module BitCore
 
       it "should validate the existence of the data attributes" do
         p = ContentProvider.new(
-          data_class_name: "BitCore::ContentProvider",
+          data_class_name: "BitCore::Tool",
           data_attributes: %w(baz)
         )
         p.valid?
 
         expect(p.errors[:data_attributes].length).to eq 1
 
-        p.data_attributes = %w(id data_attributes)
+        p.data_attributes = %w(id title)
         p.valid?
 
         expect(p.errors[:data_attributes].length).to eq 0

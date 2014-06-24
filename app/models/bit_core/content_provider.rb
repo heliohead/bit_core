@@ -58,10 +58,14 @@ module BitCore
 
     def data_attributes_exist
       return unless data_attributes
-      attribute_names = data_class.try(:attribute_names) || []
-      return if data_attributes.all? { |a| attribute_names.include?(a.to_s) }
+      attr_names = data_class.try(:attribute_names) || []
+      unknown_attrs = data_attributes.select do |a|
+        (a.class == Symbol || a.class == String) && !attr_names.include?(a.to_s)
+      end
+      return if unknown_attrs.count == 0
 
-      errors.add(:data_attributes, "must be attributes on the model class")
+      errors.add(:data_attributes, "must be attributes on the model class " \
+                 "(unrecognized: #{ unknown_attrs.join(", ") })")
     end
   end
 end
