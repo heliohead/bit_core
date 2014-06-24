@@ -8,7 +8,7 @@ module BitCore
                foreign_key: :bit_core_slideshow_id,
                inverse_of: :slides
 
-    validates :title, :body, :position, presence: true
+    validates :title, :position, presence: true
     validates :position, numericality: { greater_than_or_equal_to: 1 }
     validates :position, uniqueness: { scope: :bit_core_slideshow_id }
 
