@@ -59,7 +59,7 @@ module BitCore
     def data_attributes_exist
       return unless data_attributes
       attribute_names = data_class.try(:attribute_names) || []
-      return if data_attributes.all? { |a| attribute_names.include?(a.to_str) }
+      return if data_attributes.all? { |a| attribute_names.include?(a.to_s) }
 
       errors.add(:data_attributes, "must be attributes on the model class")
     end
