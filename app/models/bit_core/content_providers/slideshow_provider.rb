@@ -27,6 +27,17 @@ module BitCore
       def show_nav_link?
         true
       end
+
+      def add_or_update_slideshow(title)
+        if source_content
+          source_content.update(title: title)
+        else
+          slideshow = BitCore::Slideshow.create(title: title)
+          update(source_content: slideshow)
+        end
+
+        source_content
+      end
     end
   end
 end

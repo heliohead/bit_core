@@ -15,6 +15,8 @@ module BitCore
               numericality: { greater_than_or_equal_to: 1 },
               uniqueness: { scope: :bit_core_tool_id }
 
+    # Returns the `ContentProvider` at the given position, or a `Null`
+    # `ContentProvider` if none exists.
     def provider(position)
       content_providers.where(position: position).first ||
         ContentProviders::Null.new(self, position)
@@ -25,10 +27,18 @@ module BitCore
     end
 
     def add_content_provider(type)
-      content_providers.create(type: type, position: last_position + 1)
+      content_providers.build(
+        type: type,
+        position: next_position,
+        show_next_nav: true
+      )
     end
 
     private
+
+    def next_position
+      last_position + 1
+    end
 
     def last_position
       content_providers.order(:position).last.try(:position) || 0
