@@ -40,6 +40,12 @@ module BitCore
       show_next_nav
     end
 
+    # Returns a human readable string extracted from the ContentProvider class
+    # name.
+    def pretty_label
+      self.class.to_s.split("::").last.underscore.gsub(/_/, " ")
+    end
+
     private
 
     def template_path_exists

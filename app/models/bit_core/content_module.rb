@@ -34,14 +34,14 @@ module BitCore
       )
     end
 
+    def last_position
+      content_providers.order(:position).last.try(:position) || 0
+    end
+
     private
 
     def next_position
       last_position + 1
-    end
-
-    def last_position
-      content_providers.order(:position).last.try(:position) || 0
     end
   end
 end
