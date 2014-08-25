@@ -1,3 +1,5 @@
+require "redcarpet"
+
 module BitCore
   # A collection of ordered Slides.
   class Slideshow < ActiveRecord::Base
@@ -14,6 +16,18 @@ module BitCore
     validates :title, presence: true
 
     accepts_nested_attributes_for :slides
+
+    def pretty_title
+      return "" if title.nil?
+
+      Redcarpet::Markdown.new(
+        Redcarpet::Render::HTML.new(
+          filter_html: true,
+          safe_links_only: true
+        ),
+        space_after_headers: true
+      ).render(title).html_safe
+    end
 
     def add(slide_params)
       slide = slides.build(slide_params)
