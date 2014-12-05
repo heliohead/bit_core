@@ -3,6 +3,8 @@ require "redcarpet"
 module BitCore
   # A collection of ordered Slides.
   class Slideshow < ActiveRecord::Base
+    belongs_to :arm
+
     has_many :slides,
              -> { order "position" },
              class_name: "BitCore::Slide",
@@ -13,7 +15,7 @@ module BitCore
             as: :source_content,
             dependent: :nullify
 
-    validates :title, presence: true
+    validates :arm_id, :title, presence: true
 
     accepts_nested_attributes_for :slides
 

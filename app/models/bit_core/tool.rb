@@ -1,16 +1,19 @@
 module BitCore
   # A section of an application.
   class Tool < ActiveRecord::Base
+    belongs_to :arm
+
     has_many :content_modules,
              class_name: "BitCore::ContentModule",
              foreign_key: :bit_core_tool_id,
              inverse_of: :tool,
              dependent: :destroy
 
-    validates :title, :position, presence: true
+    validates :arm_id, :position, :title, presence: true
     validates :position,
               uniqueness: true,
-              numericality: { greater_than_or_equal_to: 0 }
+              numericality: { greater_than_or_equal_to: 0 },
+              uniqueness: { scope: :arm_id }
 
     def add_module(title_or_module)
       if title_or_module.class == String
