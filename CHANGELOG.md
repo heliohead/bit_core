@@ -1,3 +1,8 @@
+### 1.3.2 - 2014-12-08
+
+* enhancements
+  * removed defined class Arm
+
 ### 1.3.1 - 2014-12-08
 
 * bug fix
