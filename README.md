@@ -8,6 +8,7 @@ In order to run migrations, you will need to create a 'schema.rb' file (it is in
 ## Dependencies
 The host application will need to specify an Arm class 'app/models/arm.rb'
 ```ruby
+  # app/models/arm.rb
   class Arm
     ...
   end
