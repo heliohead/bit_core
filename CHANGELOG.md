@@ -1,3 +1,7 @@
+### 1.3.3
+
+  * refactored to account for arm_id in Slideshow
+
 ### 1.3.2 - 2014-12-08
 
 * enhancements
