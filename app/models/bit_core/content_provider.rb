@@ -62,6 +62,7 @@ module BitCore
                  "unable to find class '#{ data_class_name }'")
     end
 
+    # rubocop:disable Metrics/AbcSize
     def data_attributes_exist
       return unless data_attributes
       attr_names = data_class.try(:attribute_names) || []
@@ -71,7 +72,8 @@ module BitCore
       return if unknown_attrs.count == 0
 
       errors.add(:data_attributes, "must be attributes on the model class " \
-                 "(unrecognized: #{ unknown_attrs.join(", ") })")
+                 "(unrecognized: #{ unknown_attrs.join(', ') })")
     end
+    # rubocop:enable Metrics/AbcSize
   end
 end

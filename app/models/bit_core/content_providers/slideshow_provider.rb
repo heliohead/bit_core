@@ -28,11 +28,11 @@ module BitCore
         true
       end
 
-      def add_or_update_slideshow(title)
+      def add_or_update_slideshow(title, arm_id = nil)
         if source_content
           source_content.update(title: title)
         else
-          slideshow = BitCore::Slideshow.create(title: title)
+          slideshow = BitCore::Slideshow.create(arm_id: arm_id, title: title)
           update(source_content: slideshow)
         end
 
