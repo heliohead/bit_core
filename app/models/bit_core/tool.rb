@@ -11,7 +11,6 @@ module BitCore
 
     validates :arm_id, :position, :title, presence: true
     validates :position,
-              uniqueness: true,
               numericality: { greater_than_or_equal_to: 0 },
               uniqueness: { scope: :arm_id }
 
