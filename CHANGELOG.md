@@ -1,3 +1,7 @@
+### 1.3.4
+
+  * fixed duplicate key warning
+
 ### 1.3.3
 
   * refactored to account for arm_id in Slideshow
