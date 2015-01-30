@@ -1,3 +1,7 @@
+## 1.3.5 - 2015-01-30
+ * added type column to Tools
+ * use Ruby 2.2.0 with RVM and Travis
+
 ### 1.3.4
 
   * fixed duplicate key warning
