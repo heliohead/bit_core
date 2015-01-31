@@ -1,3 +1,6 @@
+## 1.3.6 - 2015-01-31
+ * added is_viz column to Content Modules
+
 ## 1.3.5 - 2015-01-30
  * added type column to Tools
  * use Ruby 2.2.0 with RVM and Travis
