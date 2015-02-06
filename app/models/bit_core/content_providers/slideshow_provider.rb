@@ -3,7 +3,7 @@ module BitCore
     # Defines presentation logic for a Slideshow.
     class SlideshowProvider < BitCore::ContentProvider
       def slideshow
-        source_content
+        source_content || Slideshow.new
       end
 
       def render_current(options)
