@@ -1,3 +1,6 @@
+## 1.4.0 - 2015-02-06
+ * added audio slide model
+
 ## 1.3.7 - 2015-02-06
  * don't freak out when there is no Slideshow
 
