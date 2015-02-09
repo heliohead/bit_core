@@ -1,3 +1,6 @@
+## 1.4.1 - 2015-02-09
+ * bump version
+
 ## 1.4.0 - 2015-02-06
  * added audio slide model
 
