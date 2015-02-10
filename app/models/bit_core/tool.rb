@@ -9,7 +9,7 @@ module BitCore
              inverse_of: :tool,
              dependent: :destroy
 
-    validates :arm_id, :position, :title, presence: true
+    validates :arm, :position, :title, presence: true
     validates :position,
               numericality: { greater_than_or_equal_to: 0 },
               uniqueness: { scope: :arm_id }
