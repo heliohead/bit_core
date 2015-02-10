@@ -1,3 +1,6 @@
+## 1.4.2 - 2015-02-10
+ * adds fk constraint to tools
+
 ## 1.4.1 - 2015-02-09
  * bump version
 
