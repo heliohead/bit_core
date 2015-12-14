@@ -21,5 +21,20 @@ module BitCore
         expect(subject.render_body).to match(/<p>my content<\/p>/)
       end
     end
+
+    describe "when destroyed" do
+      let(:slideshow) { bit_core_slideshows(:slideshow1) }
+      let(:slide) { bit_core_slides(:slide2) }
+
+      it "updates the positions of remaining slides" do
+        expect(slideshow.slides.map(&:position)).to eq [1, 2, 3]
+        expect(slide.position).to eq 2
+
+        slide.destroy
+
+        expect(slideshow.reload.slides.map(&:position))
+          .to eq [1, 2]
+      end
+    end
   end
 end

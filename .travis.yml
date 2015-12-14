@@ -1,4 +1,4 @@
 language: ruby
 rvm:
   - 2.2.0
-script: cd spec/dummy && RAILS_ENV=test rake db:create db:migrate && cd ../.. && rake
+script: RAILS_ENV=test bundle exec rake app:db:drop app:db:create app:db:migrate; bundle exec rake

@@ -12,6 +12,8 @@ module BitCore
     validates :position, numericality: { greater_than_or_equal_to: 1 }
     validates :position, uniqueness: { scope: :bit_core_slideshow_id }
 
+    after_destroy :update_slide_positions
+
     def render_body
       return "" if body.nil?
 
@@ -22,6 +24,13 @@ module BitCore
         ),
         space_after_headers: true
       ).render(body).html_safe
+    end
+
+    private
+
+    def update_slide_positions
+      slideshow
+        .sort(slideshow.slide_ids)
     end
   end
 end
