@@ -29,7 +29,7 @@ module BitCore
     private
 
     def update_slide_positions
-      slideshow
+      slideshow.reload
         .sort(slideshow.slide_ids)
     end
   end

@@ -40,5 +40,17 @@ module BitCore
         expect(slideshow.slides.find(slide3.id).position).to eq(1)
       end
     end
+
+    describe "when a slideshow has many slides" do
+      before do
+        expect(slideshow.slides.count).to be > 0
+      end
+
+      it "can be deleted" do
+        expect do
+          slideshow.destroy
+        end.to change { BitCore::Slideshow.count }.by(-1)
+      end
+    end
   end
 end
