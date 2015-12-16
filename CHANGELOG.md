@@ -1,3 +1,6 @@
+## 1.4.5 - 2015-12-16
+ * Allow for slideshow deletion when slides exist
+
 ## 1.4.4 - 2015-12-16
  * remove Gemfile.lock from git
  * Update travis scripts
