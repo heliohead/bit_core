@@ -1,3 +1,7 @@
+## 1.4.4 - 2015-12-16
+ * remove Gemfile.lock from git
+ * Update travis scripts
+
 ## 1.4.3 - 2015-12-14
  * update position of slides upon deletion
 
