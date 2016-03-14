@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210161229) do
+ActiveRecord::Schema.define(version: 20160311210938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,17 +36,17 @@ ActiveRecord::Schema.define(version: 20150210161229) do
   add_index "bit_core_content_modules", ["bit_core_tool_id", "position"], name: "bit_core_content_module_position", unique: true, using: :btree
 
   create_table "bit_core_content_providers", force: :cascade do |t|
-    t.string   "type",                                   null: false
+    t.string   "type",                                       null: false
     t.string   "source_content_type"
     t.integer  "source_content_id"
-    t.integer  "bit_core_content_module_id",             null: false
-    t.integer  "position",                   default: 1, null: false
+    t.integer  "bit_core_content_module_id",                 null: false
+    t.integer  "position",                   default: 1,     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "template_path"
     t.string   "data_class_name"
     t.text     "data_attributes"
-    t.boolean  "show_next_nav"
+    t.boolean  "show_next_nav",              default: false, null: false
     t.text     "locals"
   end
 
