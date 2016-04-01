@@ -3,5 +3,6 @@ cache: bundler
 sudo: false
 rvm:
   - 2.2.2
+  - 2.3.0
 install: bundle install
 script: RAILS_ENV=test bundle exec rake app:db:drop app:db:create app:db:migrate; bundle exec rake
