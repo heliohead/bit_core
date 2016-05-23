@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = BitCore::VERSION
   s.authors     = ["Eric Carty-Fickes"]
   s.email       = ["ericcf@northwestern.edu"]
-  s.homepage    = "https://github.com/nupmmarkbegale/bit_core"
+  s.homepage    = "https://github.com/NU-CBITS/bit_core"
   s.summary     = "Shared models and business logic for bit apps."
   s.description = "Models, migrations, etc."
   s.license     = "MIT"
