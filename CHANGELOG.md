@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.7 - 2016-06-16
+
+* save Slide options as a Hash
+* apply RuboCop
+
 ## 1.4.6 - 2016-04-01
 
 * update redcarpet dependency; test Ruby 2.3.0
