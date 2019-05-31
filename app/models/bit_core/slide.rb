@@ -4,6 +4,7 @@ require "redcarpet"
 module BitCore
   # A page of "static" or presentational content (as opposed to data capture).
   class Slide < ActiveRecord::Base
+    attr_accessor :options
     belongs_to :slideshow,
                class_name: "BitCore::Slideshow",
                foreign_key: :bit_core_slideshow_id,
